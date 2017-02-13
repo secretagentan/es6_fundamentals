@@ -1,6 +1,6 @@
 # ES6-Workshop1
 
-## Proper Tail Calls, Declarations, and Rest Parameters
+## Proper Tail Calls, VAR vs. LET vs. CONST, and Rest Parameters
 
 **Proper tail recursion is a property of the asymptotic complexity of a language's runtime behavior. That is, in improperly tail recursive languages..."**
       -- Dave Herman(PR@Mozilla)
@@ -56,7 +56,7 @@ console.log(fibonacci(12465));
 ```
 ### CONST, LET, and Blocks
 "Don't grep-replace "var" with "let" or you will break the internet"
-- Yoda Crockford
+        - Yoda Crockford
 
 The 'var' way is different than 'let' way! code will run different
 
@@ -133,6 +133,8 @@ console.log(a);
 ```
 
 **WHAT IS A TEMPORAL DEAD ZONE"**
+
+PAUSE READ DIGEST
 
 ```javascript
 function doSomething() {
