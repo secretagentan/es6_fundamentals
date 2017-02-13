@@ -22,13 +22,15 @@ console.log(foo())
 
 ```javascript
 function greet() {
-  return "Hello";  //last instruction to fire before return
+  return "Hello";  
+  //last instruction to fire before return
 }
 ```
 
 ```javascript
 function greet() {
-  return getSal()  //last instruction to fire before return
+  return getSal()  
+  //last instruction to fire before return
 }
 
 function getSal() {
@@ -86,6 +88,7 @@ if(true) {
 }
 
 console.log(foo+bar);
+
 ```
 ## Function Hoisting
 
@@ -120,6 +123,8 @@ if(true) {
 }
 
 console.log(foo + bar);
+// "bar is undefined"
+// "foo has already been declared"
 ```
 ```javascript
 let a = 2;
@@ -165,6 +170,7 @@ function doThat() {
 }
 
 doThat()
+// a is undefined 
 ```
 
 ## ...rest OPERATOR
@@ -178,6 +184,7 @@ function doThat(...bar) {
 }
 
 doThat('I', 'can', 'dance');
+// logs "I can dance" 
 ```
 WHAT! is this an 'arguments' object?
 
@@ -194,7 +201,8 @@ function foo() {
 
 foo('I ', 'can ', 'haz ', 'teh ', 'arguments');
 ```
-NO
+NO -- 
+
 PAUSE READ DIGEST
 
 ```javascript
@@ -207,8 +215,10 @@ function restSample(name, ...other) {
 }
 
 argumentSample('Boshika', "Tara", 'San Francisco', 'California');
+// Boshika ["Boshika", "Tara", "San Francisco", "California"]
 
 restSample('Boshika', "Tara", 'San Francisco', 'California');
+// Boshika ["Tara", "San Francisco", "California"]
 
 ```
 
@@ -221,6 +231,7 @@ function wayToManyArgs(...first, ...second) {
 }
 
 wayToManyArgs("what", "is", "this", "does", "this", "make", "sense");
+// Uncaught SyntaxError: Rest parameter must be **last** formal parameter
 ```
 
 ```javascript
@@ -229,6 +240,7 @@ function wayToManyArgs(...first, second) {
 }
 
 wayToManyArgs("what", "is", "this", "does", "this", "make", "sense");
+// Uncaught SyntaxError: Rest parameter must be last formal parameter
 ```
 
 ```javascript
@@ -237,8 +249,21 @@ function wayToManyArgs(second, ...first) {
 }
 
 wayToManyArgs("what", "is", "this", "does", "this", "make", "sense");
+// "Second: what"
+// "First: is this does this make sense"
 ```
 
+```js
+function wayToManyArgs(second, third, fourth, ...first) {
+  console.log("Second: " + second + "\nThird: " + third + "\nFourth: " + fourth + "\nFirst: " + first.join(" "));
+}
+
+wayToManyArgs("what", "is", "this", "does", "this", "make", "sense");
+// Second: what
+// Third: is
+// Fourth: this
+// First: does this make sense
+```
 
 
 
