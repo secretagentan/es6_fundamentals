@@ -124,17 +124,49 @@ let person = {
 
 let {name, age, address: {city, state, country}} = person;
 ```
+### ARRAY Destructuring
 
 ```javascript
+let nums = [1,2,3];
+
+let [first, second, third] = nums;
+console.log(first);
+
 ```
 
 ```javascript
+var a = 1; var b =2;
+
+//old way
+var temp = a; a=b; b = temp;
+
+//new way
+[b,a] = [a,b];
+
+console.log([a,b])
 ```
 
 ```javascript
+let nums = [1,2,3,4];
+doSomething(nums);
+
+function doSomething([first, second, ...others]){
+    console.log(first);
+    console.log(second);
+    console.log(others);
+}
 ```
 
 ```javascript
+var nums = [1,2,[3,4,[5,6]]];
+
+var[one,,[three,,[,six]]] = nums;
+
+console.log(one);
+
+console.log(three);
+
+console.log(six);
 ```
 
 ```javascript
