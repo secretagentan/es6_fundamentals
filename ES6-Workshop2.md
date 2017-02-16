@@ -169,7 +169,70 @@ console.log(three);
 console.log(six);
 ```
 
+### PRACTICE
+
+Use the ...rest operator
 ```javascript
+var someArray = ['A', 'B', 'C', 'D', 'E'];
+
+var fn7 = (?) => {
+    //console.log goes here
+}
+
+//Output
+"A"
+"B"
+["C", "D", "E"]
+```
+
+object destructuring
+```javascript
+let node = { 
+    type: "Identifier", 
+    name: "foo" 
+};
+```
+```javascript
+let node = { 
+    type: "Identifier", 
+    name: "foo", 
+    loc: { 
+        start: { 
+            line: 1, 
+            column: 1 
+        }, 
+        end: { 
+            line: 1,
+            column: 4 
+            }
+    } 
+};
+```
+array destructuring
+
+```javascript
+let colors = [ "red", [ "green", "lightgreen" ], "blue" ];
+```
+
+### Challenge
+
+Mixed Destructuring
+
+```javascript
+let node = { 
+    type: "Identifier", 
+    name: "foo", 
+    loc: { 
+        start: { 
+            line: 1, 
+            column: 1 
+        }, 
+        end: { 
+            line: 1, 
+            column: 4 
+        } 
+    },
+    range: [0, 3] };
 ```
 
 
