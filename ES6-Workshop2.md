@@ -2,7 +2,6 @@
 
 ## Spread Operator And Destructuring 
 
----
 ### Spread Operator
 PAUSE READ DIGEST
 
@@ -21,6 +20,7 @@ var a = [1,2,3];
 var b = returnTwo(a[0], a[1]);
 var c = returnTwo(...a);
 ```
+
 ### Combine arrays
 
 ```javascript
@@ -28,8 +28,7 @@ let nums = [1,2,3];
 let abcs = ['a', 'b', 'c'];
 
 let alphanum = [...nums, ...abcs];
-```
-
+`first
 ### Return Values
 
 ```javascript
@@ -131,6 +130,7 @@ let nums = [1,2,3];
 
 let [first, second, third] = nums;
 console.log(first);
+// => 1
 
 ```
 
@@ -144,6 +144,7 @@ var temp = a; a=b; b = temp;
 [b,a] = [a,b];
 
 console.log([a,b])
+// => [2,1]
 ```
 
 ```javascript
@@ -151,6 +152,8 @@ let nums = [1,2,3,4];
 doSomething(nums);
 
 function doSomething([first, second, ...others]){
+// '...others' is a spread operator (not rest)
+// because it's in the array and not a param
     console.log(first);
     console.log(second);
     console.log(others);
@@ -163,21 +166,31 @@ var nums = [1,2,[3,4,[5,6]]];
 var[one,,[three,,[,six]]] = nums;
 
 console.log(one);
+// => 1
 
 console.log(three);
+// => 3
 
 console.log(six);
+// => 6
 ```
 
 ### PRACTICE
 
 Use the ...rest operator
-```javascript
+
+```js
 var someArray = ['A', 'B', 'C', 'D', 'E'];
 
-var fn7 = (?) => {
+var fn7 = (a, b, ...args) => {
+    let [first, second, ...rest] = someArray;
     //console.log goes here
+    console.log(first);
+    console.log(second);
+    console.log(rest);
 }
+
+fn7(someArray);
 
 //Output
 "A"
@@ -186,13 +199,22 @@ var fn7 = (?) => {
 ```
 
 object destructuring
-```javascript
+
+```js
 let node = { 
     type: "Identifier", 
     name: "foo" 
 };
+
+let {type, name} = node;
+
+console.log(type);
+// => Identifier
+console.log(name);
+// => foo
+
 ```
-```javascript
+```js
 let node = { 
     type: "Identifier", 
     name: "foo", 
@@ -207,18 +229,35 @@ let node = {
             }
     } 
 };
+
+let {type: t, name: n, loc: {start: {line: l1, column: c1}, end: {line: l2, column: c2}}} of node;
+
+console.log(start);
+
 ```
 array destructuring
 
-```javascript
+```js
 let colors = [ "red", [ "green", "lightgreen" ], "blue" ];
+
+let [first, [second, third], fourth] = colors;
+
+console.log(first);
+// => red
+console.log(second);
+// => green
+console.log(third);
+// => lightgreen
+console.log(fourth);
+// => blue
+
 ```
 
 ### Challenge
 
 Mixed Destructuring
 
-```javascript
+```js
 let node = { 
     type: "Identifier", 
     name: "foo", 
