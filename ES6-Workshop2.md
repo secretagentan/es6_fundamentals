@@ -1,6 +1,6 @@
 # ES6-Workshop2
 
-## Spread Operator, Destructuring and Arrow functions
+## Spread Operator And Destructuring 
 
 ---
 ### Spread Operator
