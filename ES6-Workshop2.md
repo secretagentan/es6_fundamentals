@@ -78,6 +78,8 @@ function displayLiving(l) {
 }
 ```
 
+PAUSE READ DIGEST
+
 ```javascript
 let living = {name: 'Tree', age: '350'};
 displayLiving(living);
@@ -97,5 +99,57 @@ function displayLiving({name, age}) {
   return name + age;
 }
 ```
+
+```javascript
+let living = {name: 'Tree', age: '350'};
+let someVar = 20;
+displayLiving(someVar, living);
+
+function displayLiving(x, {name, age}) {
+  return name + age + 'Here is someVar: ' + x;
+}
+```
+PAUSE READ DIGEST
+
+```javascript
+let person = {
+    name: 'Gabriel García Márquez',
+    age: 87,
+    address : {
+        city: 'Bogotá',
+        state: 'Cundinamarca',
+        country: 'Colombia'
+    }
+}
+
+let {name, age, address: {city, state, country}} = person;
+```
+
+```javascript
+```
+
+```javascript
+```
+
+```javascript
+```
+
+```javascript
+```
+
+```javascript
+```
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
