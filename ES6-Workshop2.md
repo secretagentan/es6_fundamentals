@@ -28,7 +28,9 @@ let nums = [1,2,3];
 let abcs = ['a', 'b', 'c'];
 
 let alphanum = [...nums, ...abcs];
-`first
+first
+```
+
 ### Return Values
 
 ```javascript
@@ -182,8 +184,8 @@ Use the ...rest operator
 ```js
 var someArray = ['A', 'B', 'C', 'D', 'E'];
 
-var fn7 = (a, b, ...args) => {
-    let [first, second, ...rest] = someArray;
+var fn7 = ([first, second, ...rest]) => {
+    // let [first, second, ...rest] = someArray;
     //console.log goes here
     console.log(first);
     console.log(second);
